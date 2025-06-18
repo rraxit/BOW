@@ -20,7 +20,7 @@ to_obstacle_cost_gain: 0.160
 speed_cost_gain: 1.0
 num_steps: 150
 
-name: "env3"
+name: "env3_f"
 start_loc: [-10.0, -10.0]
 goal_loc: [-2.0, 5.61]
 pref_speed_index: 5

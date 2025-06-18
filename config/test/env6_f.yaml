@@ -20,7 +20,7 @@ to_obstacle_cost_gain: 0.16
 speed_cost_gain: 1.0
 num_steps: 170
 
-name: "env_noncovex"
+name: "env6_f"
 start_loc: [5.89, 1.47]
 # goal: [17.47, 8.72]
 goal_loc: [2.74, 9.71]

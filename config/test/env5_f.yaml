@@ -19,7 +19,7 @@ to_goal_cost_gain: 0.3
 to_obstacle_cost_gain: 0.16
 speed_cost_gain: 1.0
 num_steps: 170
-name: "20_obstacles"
+name: "env5_f"
 start_loc: [2.0, -1.0]
 #goal: [5.0, 5.0]
 #goal: [2.35, 5.60]

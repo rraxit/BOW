@@ -1,6 +1,0 @@
-[DEFAULT]
-traj_length = 18.862 
-traj_duration = 8.131 
-num-steps = 198 
-avg_velocity = 1.565 
-avg_jerk = 0.236 

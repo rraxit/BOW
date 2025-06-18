@@ -63,3 +63,63 @@
 [2025-06-18 16:02:32,355][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
 [2025-06-18 16:02:32,355][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
 [2025-06-18 16:02:32,356][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:43:51,049][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:43:51,213][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:43:51,214][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:43:51,214][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:43:51,214][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:44:21,761][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:44:21,936][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:44:21,936][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:44:21,936][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:44:21,937][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:44:58,449][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:44:58,625][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:44:58,626][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:44:58,626][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:44:58,626][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:45:31,489][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:45:31,651][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:45:31,651][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:45:31,651][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:45:31,651][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:46:08,337][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:46:08,506][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:46:08,506][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:46:08,506][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:46:08,506][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:47:21,189][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:47:21,492][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:47:21,492][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:47:21,492][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:47:21,493][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:50:17,454][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:50:17,621][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:50:17,621][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:50:17,621][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:50:17,622][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:50:46,621][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:50:46,787][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:50:46,787][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:50:46,787][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:50:46,788][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:51:24,193][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:51:24,366][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:51:24,366][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:51:24,366][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:51:24,366][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:51:58,357][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:51:58,522][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:51:58,522][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:51:58,522][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:51:58,522][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:52:31,945][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:52:32,123][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:52:32,123][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:52:32,123][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:52:32,124][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2025-06-18 17:53:49,565][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 17:53:49,883][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:53:49,883][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 17:53:49,884][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2025-06-18 17:53:49,884][jax._src.xla_bridge][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
