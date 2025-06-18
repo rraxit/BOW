@@ -1,1 +1,6 @@
+../../test/env1.yaml
 ../../test/env2.yaml
+../../test/env3.yaml
+../../test/env4.yaml
+../../test/env5.yaml
+../../test/env_nonconvex.yaml
