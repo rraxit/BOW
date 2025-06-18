@@ -1,0 +1,41 @@
+
+DWA/1_mean               135 ms          135 ms           10 num_nodes=157 path_length=14.3028
+DWA/1_stddev            2.31 ms         2.31 ms           10 num_nodes=1.23302u path_length=0
+RRT/1_mean               584 ms          583 ms           10 num_nodes=342 path_length=17.7874
+RRT/1_stddev             321 ms          321 ms           10 num_nodes=64.8879 path_length=2.56341
+BOW/1_mean              55.6 ms         55.6 ms           10 num_nodes=203.6 path_length=14.8072
+BOW/1_stddev            39.0 ms         39.0 ms           10 num_nodes=24.8739 path_length=0.559228
+HRVO/1_mean              260 ms          260 ms           10 num_nodes=539 path_length=15.7766
+HRVO/1_stddev           2.96 ms         2.96 ms           10 num_nodes=4.23309u path_length=0
+DWA/2_mean              74.3 ms         74.3 ms           10 num_nodes=237 path_length=20.8273
+DWA/2_stddev            3.25 ms         3.25 ms           10 num_nodes=1.8613u path_length=0
+RRT/2_mean               816 ms          815 ms           10 num_nodes=358.1 path_length=19.3819
+RRT/2_stddev             280 ms          280 ms           10 num_nodes=33.6004 path_length=2.56316
+BOW/2_mean              35.9 ms         35.9 ms           10 num_nodes=184.4 path_length=14.5554
+BOW/2_stddev            3.26 ms         3.26 ms           10 num_nodes=8.5531 path_length=0.127126
+HRVO/2_mean              286 ms          286 ms           10 num_nodes=341 path_length=14.8683
+HRVO/2_stddev           5.77 ms         5.77 ms           10 num_nodes=2.67808u path_length=356.822n
+DWA/3_mean               112 ms          112 ms           10 num_nodes=185 path_length=15.6637
+DWA/3_stddev           0.230 ms        0.230 ms           10 num_nodes=1.45292u path_length=311.834
+RRT/3_mean               644 ms          643 ms           10 num_nodes=292.2 path_length=15.8469
+RRT/3_stddev             190 ms          190 ms           10 num_nodes=28.5026 path_length=1.03191
+BOW/3_mean              28.2 ms         28.2 ms           10 num_nodes=168.4 path_length=13.5004
+BOW/3_stddev            1.25 ms         1.25 ms           10 num_nodes=12.6596 path_length=0.387087
+HRVO/3_mean              511 ms          511 ms           10 num_nodes=260 path_length=12.95
+HRVO/3_stddev           4.61 ms         4.61 ms           10 num_nodes=2.04194u path_length=219.634n
+DWA/4_mean               209 ms          209 ms           10 num_nodes=374 path_length=34.4252
+DWA/4_stddev           0.366 ms        0.360 ms           10 num_nodes=2.93725u path_length=474.002n
+RRT/4_mean              1153 ms         1152 ms           10 num_nodes=491.8 path_length=26.7588
+RRT/4_stddev            1183 ms         1183 ms           10 num_nodes=103.315 path_length=4.58898
+BOW/4_mean              48.2 ms         48.2 ms           10 num_nodes=260.2 path_length=19.4904
+BOW/4_stddev            2.84 ms         2.84 ms           10 num_nodes=18.2805 path_length=0.7235
+HRVO/4_mean              682 ms          682 ms           10 num_nodes=465 path_length=21.0557
+HRVO/4_stddev           13.9 ms         13.9 ms           10 num_nodes=3.65192u path_length=0
+RRT/5_mean               202 ms          202 ms           10 num_nodes=199.2 path_length=10.8051
+RRT/5_stddev            66.5 ms         66.4 ms           10 num_nodes=32.9707 path_length=1.30312
+BOW/5_mean              78.6 ms         78.6 ms           10 num_nodes=299.5 path_length=13.9906
+BOW/5_stddev            16.3 ms         16.3 ms           10 num_nodes=88.3267 path_length=4.22447
+HRVO/5_mean              318 ms          318 ms           10 num_nodes=164 path_length=6.88053
+HRVO/5_stddev           6.08 ms         6.08 ms           10 num_nodes=1.28799u path_length=0
+
+

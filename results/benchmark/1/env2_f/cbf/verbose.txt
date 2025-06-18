@@ -1,0 +1,12 @@
+Restricted license - for non-production use only - expires 2025-11-24
+[2025-06-18 02:18:37,640][gurobipy][INFO] - Restricted license - for non-production use only - expires 2025-11-24
+running cbf
+[2025-06-18 02:18:37,779][jax._src.xla_bridge][INFO] - Unable to initialize backend 'cuda': 
+[2025-06-18 02:18:37,779][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2025-06-18 02:18:37,779][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+[2025-06-18 02:18:37,779][jax._src.xla_bridge][WARNING] - An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+trajectory shape: (251, 2)
+traj_length = 0.819
+traj_duration = 7.781 sec
+avg_velocity = 0.074
+avg_jerk = 0.326

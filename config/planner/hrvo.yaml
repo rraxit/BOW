@@ -1,0 +1,11 @@
+name: "hrvo"
+dt: 0.1
+max_speed: 1.0
+pref_speed: 0.5
+radius: 0.595 # robot radius + obstacle length = 0.345 + 0.25
+neighborDist: 15.0
+maxNeighbors: 20
+goalRadius: 2.0
+uncertaintyOffset: 0.0
+maxAccel: 0.2
+orientation: 0.39269

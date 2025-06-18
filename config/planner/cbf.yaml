@@ -1,0 +1,3 @@
+name: "cbf"
+robot_radius: 0.345
+obstacle_length: 0.25

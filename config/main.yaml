@@ -1,0 +1,14 @@
+visualize: False
+save_results: True
+output_folder: results/benchmark
+seed: 1
+
+# algorithmic components
+defaults:
+  - test: env1_f
+  - planner: cbf
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .
