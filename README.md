@@ -15,38 +15,74 @@ BOW Benchmark provides comprehensive performance comparisons between **BOW (Baye
 |----------|---------|-------------|
 | **C++** | **BOW** | Bayesian Optimization Approach to Windowing Motion Planning |
 | | **RRT** | Rapidly-exploring Random Trees |
-| | **HRVO** | Hybrid Reciprocal Velocity Obstacles |
-| | **DWA** | Dynamic Window Approach |
-| **Python** | **MPPI** | Model Predictive Path Integral |
-| | **CBF** | Control Barrier Functions |
+| | **[HRVO](https://github.com/steakhouserodriguez/HRVO-python.git)** | Hybrid Reciprocal Velocity Obstacles |
+| | **[DWA](https://github.com/onlytailei/CppRobotics/blob/master/src/dynamic_window_approach.cpp)** | Dynamic Window Approach |
+| **Python** | **[MPPI](https://github.com/kohonda/mppi_playground.git)** | Model Predictive Path Integral |
+| | **[CBF](https://github.com/mit-ll-trusted-autonomy/cbfToolbox.git)** | Control Barrier Functions |
 
 ## 🛠️ Quick Start
 
-### C++ Development
+**First you have to install and setup the environment and then run.**
+
+### Step 1: Install & Setup Environment
+
+#### C++ Environment Setup
 
 ```bash
+# Install dependencies
+sudo apt update
+sudo apt install build-essential cmake git pkg-config \
+    libnlopt-dev libnlopt-cxx-dev libfcl-dev libompl-dev \
+    libboost-all-dev libyaml-cpp-dev
+
 # Clone and build
-git clone <your-repo>
-cd bow_benchmark
+git clone <repo>
+cd BOW
 mkdir build && cd build
 cmake ..
 make -j$(nproc)
-
-# Run benchmarks
-./BowPlannerRAL
-./benchmark/BowBenchmark
 ```
 
-### Python Development
+#### Python Environment Setup
 
 ```bash
-# Setup environment
+# Setup conda environment
 conda create -n bow python=3.10
 conda activate bow
 pip install -r requirements.txt
+```
 
+#### 🔧 Anaconda Compatibility Fix
+
+If you have Anaconda installed, add this to your `~/.bashrc`:
+
+```bash
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+```
+
+### Step 2: Run Benchmarks
+
+#### C++ Benchmarks
+
+```bash
 # Run benchmarks
+./build/benchmark/BowBenchmark
+
+# Google Benchmark tests with custom options
+./build/benchmark/BowBenchmark --benchmark_filter=BOW --benchmark_repetitions=10
+```
+
+#### Python Benchmarks
+
+```bash
+# Activate environment
+conda activate bow
+
+# Complete benchmark suite
 ./run_py.sh
+
+# Custom experiments (edit config/main.yaml first)
+python main.py
 ```
 
 ## 📦 Dependencies
@@ -67,89 +103,29 @@ pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-## ⚙️ Installation
-
-### C++ Setup
-
-```bash
-# Install dependencies
-sudo apt update
-sudo apt install build-essential cmake git pkg-config \
-    libnlopt-dev libnlopt-cxx-dev libfcl-dev libompl-dev \
-    libboost-all-dev libyaml-cpp-dev
-
-# Build project
-mkdir build && cd build
-cmake ..
-make -j$(nproc)
-```
-
-### 🔧 Anaconda Compatibility Fix
-
-If you have Anaconda installed, add this to your `~/.bashrc`:
-
-```bash
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-```
-
-### Python Setup
-
-```bash
-conda create -n bow python=3.10
-conda activate bow
-pip install -r requirements.txt
-```
-
-## 🏃‍♂️ Running Benchmarks
-
-### C++ Benchmarks
-
-```bash
-cd build/
-
-# Main benchmark application
-./BowPlannerRAL
-
-# Google Benchmark tests
-./benchmark/BowBenchmark
-./benchmark/BowBenchmark --benchmark_filter=BOW
-```
-
-### Python Benchmarks
-
-```bash
-conda activate bow
-
-# Complete benchmark suite
-./run_py.sh
-
-# Custom experiments (edit config/main.yaml first)
-python main.py
-
-# Individual planners
-python benchmark_mppi.py
-python benchmark_cbf.py
-```
-
 ## 📁 Project Structure
 
 ```
-bow_benchmark/
-├── 📂 src/                    # C++ implementations
-│   ├── 📂 planners/          # Algorithm implementations
-│   │   ├── 📂 bow/           # BOW planner
-│   │   ├── 📂 rrt/           # RRT planner
-│   │   ├── 📂 hrvo/          # HRVO planner
-│   │   └── 📂 dwa/           # DWA planner
-│   └── 📂 benchmark/         # Benchmarking utilities
-├── 📂 python/                # Python implementations
-│   ├── 📂 planners/          # MPPI & CBF planners
-│   ├── 📂 benchmarks/        # Benchmark scripts
-│   └── 📂 config/            # Configuration files
+BOW/
+├── 📂 algos/                 # Python algorithm implementations
+├── 📂 benchmark/             # C++ benchmark implementations
+│   ├── 📂 include/          # Algorithm headers (dwa, hrvo, ompl)
+│   └── 📂 src/              # Benchmark source code
+├── 📂 bow/                   # BOW planner implementation
+│   └── 📂 bow++/            # C++ BOW implementation
 ├── 📂 build/                 # C++ build directory
-├── 📄 requirements.txt       # Python dependencies
-├── 🔧 run_py.sh             # Python benchmark runner
-└── 🐍 main.py               # Python main script
+├── 📂 config/                # Configuration files
+│   ├── 📂 planner/          # Planner configurations
+│   └── 📂 test/             # Test configurations
+├── 📂 include/               # C++ headers
+│   ├── 📂 bow/              # BOW headers
+│   └── 📂 limbo/            # Bayesian optimization library
+├── 📂 results/               # Benchmark results
+├── 📂 result_analysis_cpp/   # C++ result analysis
+├── 📂 result_analysis_py/    # Python result analysis
+├── 📂 scripts/               # Utility scripts
+├── 📂 src/                   # Additional source implementations
+└── 📂 test/                  # Test files
 ```
 
 ## 🔍 Verification
