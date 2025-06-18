@@ -1,6 +1,6 @@
 # BOW Benchmark Dependencies Setup
 
-This README provides step-by-step instructions for installing all required dependencies for the BOW (Bag of Words) benchmark project.
+This README provides step-by-step instructions for installing all required dependencies for the BOW benchmark project.
 
 ## Prerequisites
 
@@ -262,22 +262,6 @@ sudo pacman -S nlopt fcl ompl boost yaml-cpp
 brew install nlopt fcl ompl boost yaml-cpp
 ```
 
-## Troubleshooting
-
-### If packages are not found in your distribution:
-
-1. **Check available packages:**
-   ```bash
-   apt search nlopt
-   apt search fcl
-   apt search ompl
-   ```
-
-2. **Add additional repositories (Ubuntu):**
-   ```bash
-   sudo add-apt-repository universe
-   sudo apt-get update
-   ```
 
 3. **Build from source** using the alternative instructions above.
 
@@ -339,7 +323,7 @@ chmod +x setup_environment.sh
 
 If you encounter issues not covered in this README:
 
-1. Check that all dependencies are installed: `./verify_dependencies.sh`
+1. Check that all dependencies are installed.
 2. Clean and rebuild: `rm -rf build && mkdir build && cd build && cmake ..`
 3. Check for conflicting library versions (especially with Anaconda)
 4. Verify GCC version compatibility: `gcc --version`
