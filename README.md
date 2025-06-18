@@ -1,17 +1,73 @@
-# BOW Benchmark Dependencies Setup
+# BOW Benchmark - Motion Planning Algorithms Comparison
 
-This README provides step-by-step instructions for installing all required dependencies for the BOW benchmark project.
+This repository provides rigorous benchmarking for **BOW (Bayesian Optimization Approach to Windowing Motion Planning with Constrained Satisfaction)** against state-of-the-art motion planning algorithms.
 
-## Prerequisites
+🌐 **Project Website:** [bow-web.github.io](https://bow-web.github.io)  
+📄 **Paper and Experiments:** Visit our website for detailed results and publications
+
+## Overview
+
+The BOW benchmark implements and compares multiple motion planning algorithms across both C++ and Python implementations:
+
+### C++ Implementation (4 Planners)
+- **BOW** - Bayesian Optimization Approach to Windowing Motion Planning
+- **RRT** - Rapidly-exploring Random Trees
+- **HRVO** - Hybrid Reciprocal Velocity Obstacles
+- **DWA** - Dynamic Window Approach
+
+### Python Implementation (2 Planners)
+- **MPPI** - Model Predictive Path Integral
+- **CBF** - Control Barrier Functions
+
+## Quick Start
+
+### For C++ Development
+```bash
+# Clone the repository
+git clone <your-bow-benchmark-repo>
+cd bow_benchmark
+
+# Run the setup script
+chmod +x setup_environment.sh
+./setup_environment.sh
+
+# Build the project
+mkdir build && cd build
+cmake ..
+make -j$(nproc)
+
+# Run benchmarks
+./BowBenchmark  # Google Benchmark file
+./BowPlannerRAL
+```
+
+### For Python Development
+```bash
+# Create Anaconda environment
+conda create -n bow python=3.10
+conda activate bow
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run Python benchmarks
+./run_py.sh
+```
+
+---
+
+## C++ Setup Instructions
+
+### Prerequisites
 
 - Ubuntu 20.04+ or similar Debian-based distribution
 - CMake 3.16+
 - GCC 9+ (recommended: GCC 11+)
 - Git
 
-## Required Dependencies
+### Required Dependencies
 
-The BOW benchmark project requires the following libraries:
+The C++ implementation requires the following libraries:
 
 1. **NLopt** - Nonlinear optimization library
 2. **FCL** - Flexible Collision Library  
@@ -19,22 +75,22 @@ The BOW benchmark project requires the following libraries:
 4. **Boost** - C++ libraries (specifically program_options component)
 5. **YAML-CPP** - YAML parser for C++
 
-## Installation Instructions
+### Step-by-Step Installation
 
-### 1. Update System Packages
+#### 1. Update System Packages
 
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
-### 2. Install Build Tools
+#### 2. Install Build Tools
 
 ```bash
 sudo apt-get install build-essential cmake git pkg-config
 ```
 
-### 3. Install NLopt (Nonlinear Optimization Library)
+#### 3. Install NLopt (Nonlinear Optimization Library)
 
 ```bash
 # Install NLopt with C++ support
@@ -44,7 +100,7 @@ sudo apt-get install libnlopt-dev libnlopt-cxx-dev
 find /usr -name "nlopt.hpp" 2>/dev/null
 ```
 
-**Alternative: Build from Source (if package doesn't include C++ headers)**
+**Alternative: Build from Source**
 ```bash
 wget https://github.com/stevengj/nlopt/archive/v2.7.1.tar.gz
 tar -xzf v2.7.1.tar.gz
@@ -56,32 +112,18 @@ sudo make install
 sudo ldconfig
 ```
 
-### 4. Install FCL (Flexible Collision Library)
+#### 4. Install FCL (Flexible Collision Library)
 
 ```bash
 # Install FCL
 sudo apt-get install libfcl-dev
 
-# Verify installation
-find /usr -name "*fcl*config.cmake" 2>/dev/null
+# Alternative: Build from Source
+# sudo apt-get install libeigen3-dev libccd-dev liboctomap-dev
+# git clone https://github.com/flexible-collision-library/fcl.git
 ```
 
-**Alternative: Build from Source**
-```bash
-# Install dependencies first
-sudo apt-get install libeigen3-dev libccd-dev liboctomap-dev
-
-# Build FCL
-git clone https://github.com/flexible-collision-library/fcl.git
-cd fcl
-mkdir build && cd build
-cmake ..
-make -j$(nproc)
-sudo make install
-sudo ldconfig
-```
-
-### 5. Install OMPL (Open Motion Planning Library)
+#### 5. Install OMPL (Open Motion Planning Library)
 
 ```bash
 # Install OMPL
@@ -91,195 +133,204 @@ sudo apt-get install libompl-dev
 find /usr -path "*/ompl/base/ProblemDefinition.h" 2>/dev/null
 ```
 
-**Alternative: Build from Source**
-```bash
-# Install dependencies
-sudo apt-get install libboost-all-dev libeigen3-dev libode-dev
-
-# Build OMPL
-git clone https://github.com/ompl/ompl.git
-cd ompl
-mkdir build && cd build
-cmake ..
-make -j$(nproc)
-sudo make install
-sudo ldconfig
-```
-
-### 6. Install Boost Libraries
+#### 6. Install Boost Libraries
 
 ```bash
 # Install all Boost development libraries
 sudo apt-get install libboost-all-dev
-
-# Or install specific components if space is a concern
-sudo apt-get install libboost-program-options-dev libboost-system-dev libboost-filesystem-dev
 ```
 
-### 7. Install YAML-CPP
+#### 7. Install YAML-CPP
 
 ```bash
 # Install YAML-CPP
 sudo apt-get install libyaml-cpp-dev
-
-# Verify installation
-find /usr -name "*yaml-cpp*" -type f 2>/dev/null | grep -E "\.(so|a)$"
 ```
 
-### 8. Install Additional Dependencies (Optional)
+### ⚠️ CRITICAL: Anaconda Library Conflict Fix
 
-```bash
-# Python dependencies for visualization scripts
-pip install fire matplotlib numpy
-
-# Or if using conda
-conda install fire matplotlib numpy
-```
-
-## Building the Project
-
-After installing all dependencies:
-
-```bash
-# IMPORTANT: Set library path first (required if Anaconda is installed)
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-
-# Clone your project (if not already done)
-git clone <your-bow-benchmark-repo>
-cd bow_benchmark
-
-# Create build directory
-mkdir build && cd build
-
-# Configure with CMake
-cmake ..
-
-# Build the project
-make -j$(nproc)
-
-# Run the executables
-./BowBenchmark
-./BowPlannerRAL
-```
-
-## ⚠️ CRITICAL FIX: Anaconda Library Conflict
-
-**If you have Anaconda installed, you MUST run this command before building or running the project:**
+**If you have Anaconda installed, you MUST run this before building:**
 
 ```bash
 export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 ```
 
-**Why this is needed:** Anaconda's older `libstdc++` conflicts with system libraries compiled with newer GCC versions, causing `GLIBCXX_3.4.32 not found` errors.
-
-### Make the Fix Permanent
-
-Add this line to your `~/.bashrc`:
+**Make it permanent:**
 ```bash
 echo 'export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Alternative: Per-Session Fix
+### Building the C++ Project
 
-Run this before each build/run session:
 ```bash
+# Set library path (if Anaconda is installed)
 export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-./BowBenchmark
-./BowPlannerRAL
-```
 
-## Common Issues and Solutions
-
-### Issue 1: GLIBCXX Version Mismatch (Anaconda Conflict)
-
-**Problem:** `version 'GLIBCXX_3.4.32' not found` when Anaconda is installed.
-
-**✅ SOLUTION:** Use the critical fix above:
-```bash
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-```
-
-### Issue 2: CMake Cannot Find Packages
-
-**Solution:** Clean CMake cache and reconfigure:
-```bash
-rm -rf build/
+# Build
 mkdir build && cd build
 cmake ..
+make -j$(nproc)
+
+# Run executables
+cd /home/airlab/Cppdev/bow_cpp_py/build/
+./BowPlannerRAL   # Main benchmark application
+
+# Run Google Benchmark tests
+cd benchmark/
+./BowBenchmark    # All benchmark tests
+./BowBenchmark --benchmark_filter=BOW  # BOW-specific benchmarks
 ```
 
-### Issue 3: Missing Development Headers
+---
 
-**Problem:** Library found but headers missing.
+## Python Setup Instructions
 
-**Solution:** Ensure `-dev` packages are installed:
+### Environment Setup
+
+We recommend using Anaconda for Python development:
+
 ```bash
-sudo apt-get install libnlopt-dev libfcl-dev libompl-dev libboost-all-dev libyaml-cpp-dev
+# Create and activate environment
+conda create -n bow python=3.10
+conda activate bow
+```
+
+### Dependencies Installation
+
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+### Python Planners Integration
+
+The Python implementation integrates the following external libraries:
+
+- **MPPI**: [mppi_playground](https://github.com/kohonda/mppi_playground.git)
+- **CBF**: [cbfToolbox](https://github.com/mit-ll-trusted-autonomy/cbfToolbox.git)
+
+### Running Python Benchmarks
+
+```bash
+# Activate environment
+conda activate bow
+
+# Method 1: Run complete benchmark suite
+./run_py.sh
+
+# Method 2: Configure and run custom experiments
+# Edit parameters in config/main.yaml to customize:
+# - Planning algorithms to test
+# - Environment scenarios
+# - Performance metrics
+# - Simulation parameters
+nano config/main.yaml  # or use your preferred editor
+
+# Then run with custom configuration
+python main.py
+
+# Method 3: Run individual planner benchmarks
+python benchmark_mppi.py
+python benchmark_cbf.py
+```
+
+---
+
+## Project Structure
+
+```
+bow_benchmark/
+├── src/                    # C++ source files
+│   ├── planners/
+│   │   ├── bow/           # BOW planner implementation
+│   │   ├── rrt/           # RRT planner implementation
+│   │   ├── hrvo/          # HRVO planner implementation
+│   │   └── dwa/           # DWA planner implementation
+│   └── benchmark/         # Benchmarking utilities
+├── python/                # Python implementations
+│   ├── planners/
+│   │   ├── mppi/          # MPPI planner
+│   │   └── cbf/           # CBF planner
+│   ├── benchmarks/        # Python benchmark scripts
+│   └── config/            # Configuration files
+│       └── main.yaml      # Main configuration parameters
+├── build/                 # C++ build directory
+│   └── benchmark/         # Google Benchmark executables location
+├── requirements.txt       # Python dependencies
+├── setup_environment.sh   # C++ setup script
+├── run_py.sh             # Python benchmark runner
+├── main.py               # Python main execution script
+└── README.md             # This file
+```
+
+## Benchmarking
+
+### C++ Benchmarks
+
+The C++ implementation uses Google Benchmark for performance testing. The benchmark executable is located at:
+`/home/airlab/Cppdev/bow_cpp_py/build/benchmark/`
+
+```bash
+# Navigate to benchmark directory
+cd /home/airlab/Cppdev/bow_cpp_py/build/benchmark/
+
+# Run comprehensive benchmarks
+./BowBenchmark
+
+# Run specific BOW planner benchmark
+./BowBenchmark --benchmark_filter=BOW
+
+# Run other specific planner benchmarks
+./BowPlannerRAL --planner=BOW
+./BowPlannerRAL --planner=RRT
+./BowPlannerRAL --planner=HRVO
+./BowPlannerRAL --planner=DWA
+```
+
+### Python Benchmarks
+
+```bash
+# Activate environment
+conda activate bow
+
+# Run Python benchmark suite
+./run_py.sh
+
+# Configure and run specific experiments
+# Edit configuration parameters in config/main.yaml
+# Then run specific experiments:
+python main.py
+
+# Run specific planners directly
+python benchmark_mppi.py
+python benchmark_cbf.py
 ```
 
 ## Verification Commands
 
-Use these commands to verify each dependency is properly installed:
+### C++ Dependencies Verification
 
 ```bash
-# Check NLopt
-pkg-config --exists nlopt && echo "NLopt found" || echo "NLopt missing"
-
-# Check FCL
-find /usr -name "fcl" -type d 2>/dev/null | head -1
-
-# Check OMPL
-find /usr -name "ompl" -type d 2>/dev/null | head -1
-
-# Check Boost
-dpkg -l | grep libboost-program-options-dev
-
-# Check YAML-CPP
-dpkg -l | grep libyaml-cpp-dev
-
-# Check all library files
-ldconfig -p | grep -E "(nlopt|fcl|ompl|boost|yaml)"
+# Check all dependencies
+pkg-config --exists nlopt && echo "NLopt ✓" || echo "NLopt ✗"
+find /usr -name "fcl" -type d 2>/dev/null | head -1 && echo "FCL ✓" || echo "FCL ✗"
+find /usr -name "ompl" -type d 2>/dev/null | head -1 && echo "OMPL ✓" || echo "OMPL ✗"
+dpkg -l | grep libboost-program-options-dev && echo "Boost ✓" || echo "Boost ✗"
+dpkg -l | grep libyaml-cpp-dev && echo "YAML-CPP ✓" || echo "YAML-CPP ✗"
 ```
 
-## Alternative Distributions
-
-### Fedora/RHEL/CentOS
+### Python Environment Verification
 
 ```bash
-sudo dnf install nlopt-devel fcl-devel ompl-devel boost-devel yaml-cpp-devel
+# Check Python environment
+conda activate bow
+python -c "import numpy, matplotlib; print('Python environment ✓')"
 ```
 
-### Arch Linux
+## Automated Setup Script
 
-```bash
-sudo pacman -S nlopt fcl ompl boost yaml-cpp
-```
-
-### macOS (Homebrew)
-
-```bash
-brew install nlopt fcl ompl boost yaml-cpp
-```
-
-
-3. **Build from source** using the alternative instructions above.
-
-### If CMake still cannot find libraries:
-
-```bash
-# Set CMAKE_PREFIX_PATH
-cmake -DCMAKE_PREFIX_PATH=/usr/local ..
-
-# Or specify individual library paths
-cmake -DNLOPT_DIR=/usr/lib/x86_64-linux-gnu/cmake/nlopt \
-      -DFCL_DIR=/usr/lib/x86_64-linux-gnu/cmake/fcl \
-      ..
-```
-
-## Environment Setup Script
-
-Create a complete setup script that includes the critical fix:
+For convenience, use the provided setup script:
 
 ```bash
 cat > setup_environment.sh << 'EOF'
@@ -289,7 +340,7 @@ echo "Setting up BOW Benchmark environment..."
 # Update system
 sudo apt-get update
 
-# Install all dependencies
+# Install C++ dependencies
 sudo apt-get install -y \
     build-essential cmake git pkg-config \
     libnlopt-dev libnlopt-cxx-dev \
@@ -301,31 +352,95 @@ sudo apt-get install -y \
 # Update library cache
 sudo ldconfig
 
-# Add the critical library path fix to .bashrc (if not already present)
+# Add library path fix for Anaconda compatibility
 if ! grep -q "LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu" ~/.bashrc; then
     echo 'export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH' >> ~/.bashrc
     echo "Added library path fix to ~/.bashrc"
 fi
 
-echo "Environment setup complete!"
-echo "IMPORTANT: Run 'source ~/.bashrc' or start a new terminal session"
-echo "Then you can build the project with:"
-echo "  mkdir build && cd build"
-echo "  cmake .."
-echo "  make -j\$(nproc)"
+echo "C++ environment setup complete!"
+echo "For Python setup, run:"
+echo "  conda create -n bow python=3.10"
+echo "  conda activate bow"
+echo "  pip install -r requirements.txt"
 EOF
 
 chmod +x setup_environment.sh
 ./setup_environment.sh
 ```
 
+## Troubleshooting
+
+### Common Issues
+
+1. **GLIBCXX Version Mismatch (Anaconda)**
+   ```bash
+   export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+   ```
+
+2. **CMake Cannot Find Packages**
+   ```bash
+   rm -rf build/
+   mkdir build && cd build
+   cmake ..
+   ```
+
+3. **Missing Development Headers**
+   ```bash
+   sudo apt-get install libnlopt-dev libfcl-dev libompl-dev libboost-all-dev libyaml-cpp-dev
+   ```
+
+### Alternative Distributions
+
+**Fedora/RHEL/CentOS:**
+```bash
+sudo dnf install nlopt-devel fcl-devel ompl-devel boost-devel yaml-cpp-devel
+```
+
+**Arch Linux:**
+```bash
+sudo pacman -S nlopt fcl ompl boost yaml-cpp
+```
+
+**macOS (Homebrew):**
+```bash
+brew install nlopt fcl ompl boost yaml-cpp
+```
+
+## Results and Publications
+
+For detailed experimental results, performance comparisons, and research publications, visit our project website:
+
+**🌐 [bow-web.github.io](https://bow-web.github.io)**
+
+## Contributing
+
+We welcome contributions to the BOW benchmark project. Please ensure:
+
+1. All C++ code follows the project's coding standards
+2. Python code is compatible with Python 3.10+
+3. New planners include appropriate benchmark integration
+4. Documentation is updated accordingly
+
+## License
+
+[Add your license information here]
+
+## Citation
+
+If you use this benchmark in your research, please cite our work:
+
+```bibtex
+[Add your citation information here]
+```
+
+---
+
 ## Support
 
-If you encounter issues not covered in this README:
+For issues and questions:
 
-1. Check that all dependencies are installed.
-2. Clean and rebuild: `rm -rf build && mkdir build && cd build && cmake ..`
-3. Check for conflicting library versions (especially with Anaconda)
-4. Verify GCC version compatibility: `gcc --version`
-
-For additional help, please refer to the individual library documentation or create an issue in the project repository.
+1. Check the troubleshooting section above
+2. Visit our website: [bow-web.github.io](https://bow-web.github.io)
+3. Create an issue in the project repository
+4. Ensure all dependencies are properly installed before reporting issues
