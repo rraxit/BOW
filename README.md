@@ -14,7 +14,7 @@ BOW Benchmark provides comprehensive performance comparisons between **BOW (Baye
 | Language | Planner | Description |
 |----------|---------|-------------|
 | **C++** | **BOW** | Bayesian Optimization Approach to Windowing Motion Planning |
-| | **RRT** | Rapidly-exploring Random Trees |
+| | **RRT** | Rapidly-exploring Random Trees (OMPL) |
 | | **[HRVO](https://github.com/steakhouserodriguez/HRVO-python.git)** | Hybrid Reciprocal Velocity Obstacles |
 | | **[DWA](https://github.com/onlytailei/CppRobotics/blob/master/src/dynamic_window_approach.cpp)** | Dynamic Window Approach |
 | **Python** | **[MPPI](https://github.com/kohonda/mppi_playground.git)** | Model Predictive Path Integral |
